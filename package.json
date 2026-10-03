@@ -1,18 +1,21 @@
 {
-  "name": "shivam-portfolio",
+  "name": "shivam-kumar-sah-portfolio",
   "version": "1.0.0",
-  "description": "Professional portfolio of Shivam Shah - Machine Learning Engineer",
+  "description": "Portfolio of Shivam Kumar Sah \u2014 ML research (Nepali-English NLP, applied deep learning)",
   "main": "src/index.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "stats": "node scripts/fetch-github-stats.mjs",
+    "postbuild": "node scripts/prerender-meta.mjs"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1"
+    "react-scripts": "5.0.1",
+    "three": "^0.160.0"
   },
   "browserslist": {
     "production": [
@@ -24,6 +27,11 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
     ]
   }
 }

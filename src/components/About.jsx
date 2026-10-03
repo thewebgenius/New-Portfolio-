@@ -1,101 +1,54 @@
-import React, { useState } from 'react';
-import { portfolioData } from '../data/portfolioData';
-import SectionTitle from './SectionTitle';
+import React from 'react';
+import { profile, researchInterests, skills, education } from '../data/portfolioData';
+import SectionHead from './SectionHead';
+import NameTag from './NameTag';
 
-const About = () => {
-  const { skills, education } = portfolioData;
-  const [hoveredInterest, setHoveredInterest] = useState(null);
-
+export default function About() {
   return (
-    <section id="about" className="about">
+    <section id="about" className="section">
       <div className="container">
-        <SectionTitle title="About Me" />
-        <div className="about-content">
-          <div className="about-text">
-            <h3>Architect of Intelligent Systems</h3>
-            <p>I am a Computer Science student at DIT University, focusing on Machine Learning, Deep Learning, and Intelligent Agent Systems.</p>
-            <p>My work involves designing, training, and evaluating learning models, while exploring how different architectures shape understanding, reasoning, and decision-making.</p>
-            <p>I'm particularly interested in how neural representations emerge inside models — and how AI systems can be made more interpretable, efficient, and context-aware.</p>
-            <p style={{fontStyle: 'italic', color: 'var(--secondary)', marginTop: '15px'}}>I'm not just building models — I'm exploring how learning agents evolve behavior.</p>
-            
-            <div className="skills">
-              <div className="skill-category">
-                <h4>Programming & Web</h4>
-                <div className="skill-tags">
-                  {skills.programming.map((skill, index) => (
-                    <span key={index} className="skill-tag">{skill}</span>
-                  ))}
-                </div>
-              </div>
-              
-              <div className="skill-category">
-                <h4>Machine Learning & AI</h4>
-                <div className="skill-tags">
-                  {skills.ml.map((skill, index) => (
-                    <span key={index} className="skill-tag">{skill}</span>
-                  ))}
-                </div>
-              </div>
-              
-              <div className="skill-category">
-                <h4>Deep Learning Frameworks</h4>
-                <div className="skill-tags">
-                  {skills.deepLearning.map((skill, index) => (
-                    <span key={index} className="skill-tag">{skill}</span>
-                  ))}
-                </div>
-              </div>
+        <SectionHead title="About" />
+        <div className="about-grid">
+          <div className="about-main">
+            <p className="about-summary">{profile.summary}</p>
 
-              <div className="skill-category">
-                <h4>Interested In</h4>
-                <div className="skill-tags">
-                  {skills.interests.map((interest, index) => (
-                    <span 
-                      key={index} 
-                      className="skill-tag interest-tag"
-                      onMouseEnter={() => setHoveredInterest(index)}
-                      onMouseLeave={() => setHoveredInterest(null)}
-                    >
-                      {interest.name}
-                      {hoveredInterest === index && (
-                        <div className="tooltip">
-                          {interest.tooltip}
-                        </div>
-                      )}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              
-              <div className="skill-category">
-                <h4>Cloud & IoT</h4>
-                <div className="skill-tags">
-                  {skills.cloud.map((skill, index) => (
-                    <span key={index} className="skill-tag">{skill}</span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="about-text">
-            <h3>Education</h3>
-            <div className="timeline">
-              {education.map((edu, index) => (
-                <div key={index} className="timeline-item">
-                  <div className="timeline-content">
-                    <h3>{edu.institution}</h3>
-                    <span className="date">{edu.period}</span>
-                    <p>{edu.degree}</p>
-                  </div>
+            <h3 className="sub-title">What I work on</h3>
+            <dl className="interests">
+              {researchInterests.map((r) => (
+                <div key={r.name} className="interest">
+                  <dt>{r.name}</dt>
+                  <dd>{r.text}</dd>
                 </div>
               ))}
-            </div>
+            </dl>
+
+            <h3 className="sub-title">Tools I use</h3>
+            <dl className="skills">
+              {skills.map((s) => (
+                <div key={s.group} className="skill-row">
+                  <dt>{s.group}</dt>
+                  <dd>{s.items.join(', ')}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
+
+          <aside className="about-side">
+            <NameTag />
+            <h3 className="sub-title">Education</h3>
+            <ol className="edu">
+              {education.map((e) => (
+                <li key={e.place}>
+                  <span className="edu-place">{e.place}</span>
+                  <span className="edu-period">{e.period}</span>
+                  <span className="edu-detail">{e.detail}</span>
+                </li>
+              ))}
+            </ol>
+            <p className="langs">Speaks Nepali (native), English and Hindi.</p>
+          </aside>
         </div>
       </div>
     </section>
   );
-};
-
-export default About;
+}

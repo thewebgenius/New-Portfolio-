@@ -2,18 +2,156 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Shivam Shah - Aspiring Machine Learning Engineer Portfolio"
-    />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <title>Shivam Shah | ML Engineer</title>
+
+    <!-- ===== SEO: primary tags (keep the name first; Google shows ~60 characters of the title) ===== -->
+    <title>Shivam Kumar Sah | ML Researcher – NLP &amp; Deep Learning</title>
+    <meta name="description" content="Shivam Kumar Sah is a B.Tech CSE (AI/ML) student at DIT University researching Nepali-English NLP, speech for low-resource languages and applied deep learning." />
+    <meta name="author" content="Shivam Kumar Sah" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <!-- If you move to your own domain, change https://shubhamportfolio743.netlify.app everywhere in this file,
+         in public/sitemap.xml, public/robots.txt and scripts/prerender-meta.mjs (see SEO.md). -->
+    <link rel="canonical" href="https://shubhamportfolio743.netlify.app/" />
+    <!-- Google Search Console: paste your verification tag here, e.g.
+         <meta name="google-site-verification" content="YOUR_CODE" /> -->
+
+    <!-- ===== Social previews (LinkedIn, WhatsApp, X, Slack) ===== -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Shivam Kumar Sah" />
+    <meta property="og:title" content="Shivam Kumar Sah | ML Researcher – NLP & Deep Learning" />
+    <meta property="og:description" content="Nepali-English code-switched NLP, speech for low-resource languages, and image classification for medical and environmental problems." />
+    <meta property="og:url" content="https://shubhamportfolio743.netlify.app/" />
+    <meta property="og:image" content="https://shubhamportfolio743.netlify.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Shivam Kumar Sah — ML research portfolio" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="profile:first_name" content="Shivam" />
+    <meta property="profile:last_name" content="Sah" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Shivam Kumar Sah | ML Researcher – NLP & Deep Learning" />
+    <meta name="twitter:description" content="Nepali-English code-switched NLP, low-resource speech and applied deep learning." />
+    <meta name="twitter:image" content="https://shubhamportfolio743.netlify.app/og-image.png" />
+
+    <!-- ===== Icons ===== -->
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231d3fa6'/><text x='16' y='22' font-family='monospace' font-size='15' font-weight='700' text-anchor='middle' fill='white'>sk</text></svg>" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#f5f6f8" />
+
+    <!-- ===== Structured data: tells Google who this page is about =====
+         ProfilePage + Person is the format Google documents for personal profile pages. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://shubhamportfolio743.netlify.app/#website",
+          "url": "https://shubhamportfolio743.netlify.app/",
+          "name": "Shivam Kumar Sah",
+          "inLanguage": "en",
+          "publisher": { "@id": "https://shubhamportfolio743.netlify.app/#person" }
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": "https://shubhamportfolio743.netlify.app/#profilepage",
+          "url": "https://shubhamportfolio743.netlify.app/",
+          "name": "Shivam Kumar Sah | ML Researcher – NLP & Deep Learning",
+          "isPartOf": { "@id": "https://shubhamportfolio743.netlify.app/#website" },
+          "mainEntity": { "@id": "https://shubhamportfolio743.netlify.app/#person" },
+          "about": { "@id": "https://shubhamportfolio743.netlify.app/#person" },
+          "dateModified": "2026-10-04",
+          "primaryImageOfPage": { "@id": "https://shubhamportfolio743.netlify.app/#portrait" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://shubhamportfolio743.netlify.app/#person",
+          "name": "Shivam Kumar Sah",
+          "givenName": "Shivam",
+          "additionalName": "Kumar",
+          "familyName": "Sah",
+          "alternateName": ["Shivam Sah", "Shubham Shah", "Shivam Shah"],
+          "url": "https://shubhamportfolio743.netlify.app/",
+          "image": {
+            "@type": "ImageObject",
+            "@id": "https://shubhamportfolio743.netlify.app/#portrait",
+            "url": "https://shubhamportfolio743.netlify.app/images/profileimage/profile-pic.jpeg",
+            "caption": "Shivam Kumar Sah"
+          },
+          "jobTitle": "Machine Learning Student Researcher",
+          "description": "B.Tech CSE (AI/ML) student at DIT University working on Nepali-English code-switched NLP, speech for low-resource languages and applied deep learning.",
+          "email": "mailto:shubhamshah2078@gmail.com",
+          "affiliation": {
+            "@type": "CollegeOrUniversity",
+            "name": "DIT University",
+            "url": "https://www.dituniversity.edu.in/"
+          },
+          "alumniOf": [
+            { "@type": "CollegeOrUniversity", "name": "DIT University", "url": "https://www.dituniversity.edu.in/" },
+            { "@type": "HighSchool", "name": "Uniglobe High School" }
+          ],
+          "homeLocation": { "@type": "Place", "name": "Kathmandu, Nepal" },
+          "knowsLanguage": ["en", "ne", "hi"],
+          "knowsAbout": [
+            "Machine learning",
+            "Natural language processing",
+            "Code-switching",
+            "Language identification",
+            "Nepali language processing",
+            "XLM-RoBERTa",
+            "Automatic speech recognition",
+            "Computer vision",
+            "EfficientNet",
+            "K-means clustering",
+            "PyTorch"
+          ],
+          "sameAs": [
+            "https://www.linkedin.com/in/shubham-shah-b6a03b296/",
+            "https://github.com/thewebgenius"
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+    <script>
+      // Set the theme before first paint to avoid a flash. "inference" = light, "train" = dark.
+      (function () {
+        var t;
+        try { t = localStorage.getItem('theme-mode'); } catch (e) {}
+        if (t !== 'train' && t !== 'inference') {
+          t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'train' : 'inference';
+        }
+        document.documentElement.setAttribute('data-mode', t);
+      })();
+    </script>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!-- Readable content for crawlers and visitors without JavaScript -->
+    <noscript>
+      <h1>Shivam Kumar Sah</h1>
+      <p>B.Tech CSE (AI/ML) student at DIT University, Dehradun, working on Nepali-English code-switched NLP,
+        speech for low-resource languages and applied deep learning.</p>
+      <h2>Research and projects</h2>
+      <ul>
+        <li>Token-level language identification for romanized Nepali-English text (XLM-RoBERTa, 99.54% token accuracy; paper in preparation)</li>
+        <li>SmartBinX: waste image classification with EfficientNet-B2</li>
+        <li>Skin lesion classification on HAM10000 with EfficientNet-B4</li>
+        <li>Multilingual Voice Banking Sahayak (MVBS) — in progress</li>
+        <li><a href="/lab/kmeans">K-Means image compression playground</a></li>
+      </ul>
+      <p>
+        <a href="https://www.linkedin.com/in/shubham-shah-b6a03b296/">LinkedIn</a> ·
+        <a href="https://github.com/thewebgenius">GitHub</a> ·
+        <a href="/resume/Shivam_Kumar_Sah_Resume.pdf">Résumé (PDF)</a> ·
+        <a href="mailto:shubhamshah2078@gmail.com">shubhamshah2078@gmail.com</a>
+      </p>
+    </noscript>
     <div id="root"></div>
   </body>
 </html>

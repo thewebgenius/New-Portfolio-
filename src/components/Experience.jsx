@@ -1,28 +1,24 @@
 import React from 'react';
-import { portfolioData } from '../data/portfolioData';
-import SectionTitle from './SectionTitle';
+import { experience } from '../data/portfolioData';
+import SectionHead from './SectionHead';
 
-const Experience = () => {
-  const { experience } = portfolioData;
-
+export default function Experience() {
   return (
-    <section id="experience" className="experience">
+    <section id="experience" className="section">
       <div className="container">
-        <SectionTitle title="Experience & Research" />
-        <div className="timeline">
-          {experience.map((exp, index) => (
-            <div key={index} className="timeline-item">
-              <div className="timeline-content">
-                <h3>{exp.title}</h3>
-                <span className="date">{exp.company} — {exp.location} ({exp.period})</span>
-                <p>{exp.description}</p>
+        <SectionHead title="Experience" />
+        <ul className="exp-list">
+          {experience.map((x) => (
+            <li key={x.role + x.org} className="exp">
+              <span className="exp-period">{x.period}</span>
+              <div>
+                <h3 className="exp-role">{x.role}, <span>{x.org}</span></h3>
+                <p>{x.detail}</p>
               </div>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );
-};
-
-export default Experience;
+}
